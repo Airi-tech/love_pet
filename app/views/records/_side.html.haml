@@ -1,0 +1,21 @@
+.Side
+  .SideHeader
+    .SideHeader__lists
+      %p.SideHeader__lists__userName 名前
+      %ul.SideHeader__lists__icons
+        %li.SideHeader__lists__newGroup
+          =link_to "#" do
+            =icon('fas', 'edit')
+        %li.SideHeader__lists__editUseer
+          =link_to "#" do
+            =icon('fas', 'cog')
+
+  .PetList
+    .PetList__pets
+      = link_to "#", class:"pet" do
+        .pet__image
+        .pet__name 名前
+    .PetList__pets
+      = link_to "#", class:"pet" do
+        .pet__image
+        .pet__name 名前

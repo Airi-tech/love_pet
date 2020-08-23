@@ -1,0 +1,33 @@
+.ChatMain
+  .MeinHeader
+    .MeinHeader__group
+      .MeinHeader__groupImage
+      .MeinHeader__groupName 猫の名前
+      .MeinHeader__groupMember Member : 名前
+    = link_to "#", class: "MeinHeader__editBtn" do
+      編集
+
+  .MessageList
+    .MessageBox
+    .MessageBox
+    .MessageBox
+    .MessageBox
+    .MessageBox
+    .MessageBox
+    .MessageBox
+    .MessageBox
+    .MessageBox
+    .MessageBox
+    .MessageBox
+    .MessageBox
+
+      
+
+  .MessageForm
+    %form.new_message
+      .InputBox
+        %input{type: "text", class: "InputBox__text", placeholder: "type a message"}
+        %label{class: "InputBox__image"}
+          =icon('fas', 'image')
+          %input{type: "file", class: "InputBox__image__file"}
+      %input{type: "submit", name: "commit", class: "SubmitBtn", value: "Send"}  
