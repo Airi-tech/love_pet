@@ -1,3 +1,190 @@
-// Place all the styles related to the records controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+  box-sizing: border-box;
+}
+
+$color-white: rgb(255, 255, 255);
+
+@mixin duplication-style($height,$background-color,$padding){
+  display: flex;
+  height: $height;
+  background-color: $background-color;
+  padding: $padding
+}
+
+@mixin hight-width($height,$width){
+  height: $height;
+  width: $width;
+}
+
+@mixin color-font($color,$font-size){
+  color: $color;
+  font-size: $font-size;
+}
+
+.wrapper {
+  display: flex;
+  height: 100vh;
+}
+
+.Side {
+  @include hight-width(100vh,200px);
+
+  .SideHeader {
+    @include color-font(#333333,20px);
+    @include duplication-style(100px,$color-white,0 20px);
+    font-weight: bold;
+    align-items: center;
+    border-right: solid 1px #eeeeee;
+    border-bottom: solid 1px #eeeeee;
+
+    &__lists {
+      display: flex;
+      justify-content: space-between;
+      @include hight-width(20px,260px);
+
+      &__icons {
+        display: flex;
+
+        li {
+          margin-left: 5px;
+
+          a {
+            color: #333333;
+          }
+        }
+      }
+    }  
+  }
+
+  .PetList {
+    overflow: scroll;
+    border-right: solid 1px #eeeeee;
+    background-color: $color-white;
+    height: calc(100vh - 100px);
+    padding: 0 20px;
+
+    &__pets {
+      padding: 20px 0 20px;
+
+      .pet {
+        display: flex;
+        color: #333333;
+        text-decoration: none;
+
+        &__image {
+          background-color: #3aacad;
+          height: 70px;
+          width: 70px;
+          border-radius: 50%;
+        }
+
+        &__name {
+          font-size: 18px;
+          margin-left: 5px;
+        }
+      }  
+    }
+  }
+}
+
+.ChatMain {
+  @include hight-width(100vh,calc(100vw - 200px));
+  background-color: $color-white;
+
+  .MeinHeader {
+    @include duplication-style(100px,$color-white,0 40px);
+    border-bottom: solid 1px #eeeeee;
+    justify-content: space-between;
+
+    &__groupImage {
+      position: absolute;
+      top: 10px;
+      height: 80px;
+      width: 80px;
+      background-color: #3aacad;
+      border-radius: 50%;
+    }
+
+    &__groupName {
+      margin-left: 100px;
+      @include color-font(#333333,20px);
+      padding: 15px 0 20px;
+    }
+
+    &__groupMember {
+      margin-left: 100px;
+      @include color-font(#999999,12px);
+    } 
+
+    &__editBtn {
+      @include color-font(#ff6c94,16px);
+      display: block;
+      margin-top: 28px;
+      height: 40px;
+      line-height: 40px;
+      padding: 0 20px;
+      border: solid 1px #ff6c94;
+      text-decoration: none;
+    }
+  }
+
+  .MessageList {
+    overflow: scroll;
+    height: calc(100vh - 190px);
+    background-color: #fafafa;
+    padding: 20px 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+
+    .MessageBox {
+      background-color: #3aacad;
+      height: 300px;
+      width: 300px;
+      margin: 3px;
+    }
+  }
+
+  .MessageForm {
+    height: 90px;
+    background-color: #d2d2d2;
+    padding: 20px 40px;
+
+    form {
+      display: flex;
+
+      .InputBox {
+        display: flex;
+        width: 100%;
+        position: relative;
+
+        &__text {
+          @include hight-width(50px,100%);
+          color: #434a54;
+          border-style: none;
+          padding: 0 40px 0 10px;
+        }
+
+        &__image {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          font-size: 1.3rem;
+
+          &__file {
+            display: none;
+          }
+        }
+      }
+
+      .SubmitBtn {
+        @include hight-width(50px,100px);
+        @include color-font($color-white,16px);
+        padding: 0 30px;
+        margin-left: 15px;
+        background-color: #ff6c94;
+        border-style: none;
+      }
+    }
+  }
+} 
